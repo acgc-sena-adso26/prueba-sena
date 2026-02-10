@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block head %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/sections.css')}}">
+{% endblock %}
+{% block content %}
+<section class="section_1">
+    <h1>Bienvenido a la tienda</h1>
+    <p>Explora nuestra seleccion, con productos destacados y entregas rapidas.</p>
+</section>
+<section class="compras">
+    {% for i in range(30) %}
+    <div class="card">
+        <h3 class="titulo">Tussi premium</h3>
+        <img src="{{url_for('static', filename='img/tussi.png')}}" alt="">
+        <p>tussi de alta calidad a precio excelente.</p>
+        <p class="price">$1.5</p>
+        <button class="buy">
+            <img src="{{url_for('static', filename='img/favicon.ico')}}" alt="">
+            Comprar
+        </button>
+    </div>
+    {% endfor %}
+</section>
+{% endblock %}

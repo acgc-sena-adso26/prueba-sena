@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda el tussi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@300;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/navbar.css')}}">
+    {% block head %}
+    {% endblock %}
+    </head>
+    <body class="app-body">
+        <header class="menu">
+            <div class="logo-wrap">
+                <span class="logo-mark">●</span>
+                <p class="logo">Tienda el tussi</p>
+                {% if session.get('username') %}
+                <p class="usuario">{{ session.get('username') }}</p>
+                {% endif %}
+            </div>
+            <div class="menu-actions">
+                <div class="despl" id="hamburguesa" aria-label="Abrir menu">≡</div>
+            </div>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <div class="flash-container" role="status" aria-live="polite">
+                {% for category, message in messages %}
+                <div class="flash flash-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+        </header>
+        <main class="principal">
+            <nav class="contenido">
+                <a href="{{ url_for('index') }}">Inicio</a>
+                {% if session.get('username') %}
+                <a href="{{ url_for('logout') }}">Logout</a>
+                {% else %}
+                <a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('registro') }}">Registro</a>
+                {% endif %}
+            </nav>
+            <section class="implementacion">
+                {% block content %}
+                {% endblock %}
+            </section>
+        </main>
+        <script src="{{url_for('static', filename='js/navbar.js')}}"></script>
+    </body>
+
+</html>

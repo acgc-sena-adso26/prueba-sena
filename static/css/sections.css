@@ -1,0 +1,138 @@
+.section_1 {
+    background: linear-gradient(120deg, rgba(247, 201, 72, 0.18), rgba(23, 27, 40, 0.9)),
+        url("/static/img/tussi.png") no-repeat right 15%/240px;
+    border-radius: 20px;
+    padding: 48px 36px;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 28px;
+}
+
+.section_1 h1 {
+    font-family: "Antonio", sans-serif;
+    font-size: clamp(32px, 4vw, 56px);
+    margin: 0;
+}
+
+.section_1 p {
+    max-width: 480px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.compras {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background-color: var(--bg-panel);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    text-align: left;
+    padding: 20px 22px;
+    border: 1px solid var(--stroke);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 14px;
+}
+
+.buy {
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
+    color: #1c1d22;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 700;
+}
+
+.buy img {
+    width: 18px;
+    height: 18px;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.auth {
+    display: grid;
+    place-items: center;
+    min-height: 60vh;
+}
+
+.auth-card {
+    width: min(420px, 100%);
+    background: var(--bg-panel);
+    border-radius: 20px;
+    padding: 28px;
+    border: 1px solid var(--stroke);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.auth-card h1 {
+    margin: 0;
+    font-family: "Antonio", sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.auth-card label {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--stroke);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text);
+    margin-top: 6px;
+}
+
+.auth-card button {
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
+    color: #1c1d22;
+    border: none;
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .section_1 {
+        background-position: right -40px bottom 10px;
+        padding: 36px 24px;
+    }
+}
