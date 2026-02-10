@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block head %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/sections.css')}}">
+{% endblock %}
+{% block content %}
+<section class="section_1">
+    <h1>Usuarios</h1>
+    <p>Gestiona los usuarios registrados en tu tienda.</p>
+</section>
+<section class="usuarios">
+    {% for usuario in usuarios %}
+    <div class="usuarios-card">
+        <div class="contenido-usuario">
+            <h4>{{ usuario.username }}</h4>
+            <p>Email: {{ usuario.email }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block head %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/sections.css')}}">
+{% endblock %}
+
+{% block content %}
+<section class="pagina_404">
+    <h1>404 - Página no encontrada</h1>
+    <p>Lo sentimos, la página que buscas no existe.</p>
+    <a href="{{ url_for('index') }}">Volver al inicio</a>    
+</section >
+{% endblock %}

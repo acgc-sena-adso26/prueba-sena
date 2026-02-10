@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/sections.css')}}">
+{% endblock %}
+{% block content %}
+<section class="section_1">
+    <h1>Bienvenido a la tienda</h1>
+    <p>Explora nuestra seleccion, con productos destacados y entregas rapidas.</p>
+</section>
+<section class="compras">
+    {% for producto in productos %}
+    <div class="card">
+        <div class="contenido">
+            <h3 class="titulo">{{ producto.nombre }}</h3>
+            <img src="{{ producto.img_url }}" alt="imagen">
+            <p>stock: {{ producto.stock }}</p>
+            <p class="price">${{ producto.precio }}</p>
+        </div>
+
+        <form action="{{ url_for('pagos.checkout', id_producto=producto.id) }}" method="POST">
+            <button type="submit" class="buy">
+                Comprar
+            </button>
+        </form>
+    </div>
+    {% endfor %}
+</section>
+{% endblock %}

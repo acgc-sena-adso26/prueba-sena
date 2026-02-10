@@ -1,0 +1,48 @@
+.formulario {
+    display: grid;
+    place-items: center;
+    min-height: 60vh;
+}
+
+.formulario-card {
+    width: min(420px, 100%);
+    background: var(--bg-panel);
+    border-radius: 20px;
+    padding: 28px;
+    border: 1px solid var(--stroke);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.formulario-card h1 {
+    margin: 0;
+    font-family: "Antonio", sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.formulario-card label {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.formulario-card input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--stroke);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text);
+    margin-top: 6px;
+}
+
+.formulario-card button {
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
+    color: #1c1d22;
+    border: none;
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}

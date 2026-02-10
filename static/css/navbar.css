@@ -12,6 +12,7 @@
     --muted: #a3adbf;
     --stroke: rgba(255, 255, 255, 0.08);
     --shadow: 0 20px 45px rgba(2, 6, 23, 0.45);
+    --bg-linear: linear-gradient(240deg, rgba(20, 24, 36, 0.95), rgba(242, 242, 242, 0.2));
 }
 
 body {
